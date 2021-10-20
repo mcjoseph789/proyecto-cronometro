@@ -1,0 +1,11 @@
+.colon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transform: skewX(-4deg);
+}
+
+.circle {
+  background-color: #ff9800;
+  border-radius: 100%;
+}

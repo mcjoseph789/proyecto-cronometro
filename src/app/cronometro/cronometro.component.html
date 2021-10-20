@@ -1,3 +1,7 @@
 <div class="cronometro">
-  {{segundo}} Seg.
+  <div style="display: flex; flex-direction: row;">
+    <app-sevenseg [value]="minuto"></app-sevenseg>
+    <app-colon></app-colon>
+    <app-sevenseg [pad]="true" [value]="segundo % 60"></app-sevenseg>
+  </div>
 </div>

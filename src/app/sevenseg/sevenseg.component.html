@@ -1,0 +1,10 @@
+<div class="ss-container">
+  <div *ngFor="let i of digitsArray" class="ss-digit" [ngStyle]="digitStyle(i)">
+    <div
+      *ngFor="let j of SEGMENTS"
+      class="ss-hexagon"
+      [ngStyle]="shapeStyle(j)"
+      [ngClass]="shapeClass(digits - 1 - i, j)"
+    ></div>
+  </div>
+</div>

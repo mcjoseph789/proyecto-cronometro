@@ -1,24 +1,25 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 
 @Component({
   selector: 'app-cronometro',
   templateUrl: './cronometro.component.html',
-  styleUrls: ['./cronometro.component.css']
+  styleUrls: ['./cronometro.component.css'],
 })
 export class CronometroComponent implements OnInit {
-  segundo=0;
-  @Input() inicio!:number;
-  @Output() multiplo10=new EventEmitter();
-  constructor() { }
+  segundo = 0
+  @Input() inicio!: number
+  @Output() multiplo10 = new EventEmitter()
+  constructor() {}
 
-  ngOnInit(): void {
-    this.segundo = this.inicio;
-    setInterval(()=>{
-      this.segundo++;
-      if(this.segundo%10==0)
-      this.multiplo10.emit(this.segundo);
-    },1000);
+  get minuto() {
+    return Math.floor(this.segundo / 60)
   }
 
-
+  ngOnInit(): void {
+    this.segundo = this.inicio
+    setInterval(() => {
+      this.segundo++
+      if (this.segundo % 10 == 0) this.multiplo10.emit(this.segundo)
+    }, 1000)
+  }
 }
